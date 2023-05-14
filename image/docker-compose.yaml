@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  django:
+    image: douzero:latest
+    ports:
+      - "8000:8000"
+    command: ["sh", "-c", "cd /rlcard-showdown/server && python3 manage.py runserver 0.0.0.0:8000"]
+  flask:
+    image: douzero:latest
+    ports:
+      - "5000:5000"
+    volumes:
+      - /path/to/pretrained:/rlcard-showdown/pve_server/pretrained
+    command: ["sh", "-c", "cd /rlcard-showdown/pve_server && python3 run_douzero.py"]
+  node:
+    image: douzero:latest
+    ports:
+      - "3000:3000"
+    command: ["sh", "-c", "cd /rlcard-showdown && npm start"]
+

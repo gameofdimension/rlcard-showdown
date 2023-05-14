@@ -2,7 +2,7 @@ FROM nikolaik/python-nodejs:python3.8-nodejs13
 
 RUN npm config set registry http://mirrors.cloud.tencent.com/npm/
 
-RUN git clone -b master --single-branch --depth=1 https://github.com/datamllab/rlcard-showdown.git
+RUN git clone -b master --single-branch --depth=1 https://github.com/gameofdimension/rlcard-showdown.git
 
 WORKDIR /rlcard-showdown
 
